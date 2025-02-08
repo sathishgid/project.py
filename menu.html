@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--========== BOX ICONS ==========-->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!--========== CSS ==========-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Accent - Menu</title>
+</head>
+<body>
+
+    <!--========== HEADER (Nav Bar) ==========-->
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <h1 href="#" class="nav__logo">Accent</h1>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li> <!-- Link to Home Page -->
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="menu.html" class="nav__link active-link">Menu</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                    <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                </ul>
+            </div>
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--========== MENU ==========-->
+    <section class="menu section bd-container" id="menu">
+        <span class="section-subtitle">Products</span>
+        <h2 class="section-title">"Smart, Reliable, and Efficient — Top-Rated Water Control"</h2>
+
+        <!-- Big image card -->
+        <div class="menu__big-card">
+            <img src="assets/img/product1.jpeg" alt="Main product" id="big-image" class="menu__big-img">
+            <h3 id="big-name" class="menu__name">Wireless Water Level Controller</h3>
+            <span id="big-detail" class="menu__detail">Coming soon...</span>
+            <span id="big-preci" class="menu__preci">$22.00</span>
+        </div>
+		
+		
+        <h2 class="section-title">"Smart, Reliable, and Efficient — Top-Rated Water Control"</h2>
+        <!-- Small clickable cards -->
+        <div class="menu__container bd-grid">
+            <div class="menu__content" onclick="changeBigImage('assets/img/product1.jpeg', 'Wireless Water Level Controller', 'Coming soon...', '$22.00')">
+                <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+            </div>
+
+            <div class="menu__content" onclick="changeBigImage('assets/img/product1.jpeg', 'Water Pump Controller', 'Available now!', '$25.00')">
+                <img src="assets/img/product2.jpeg" alt="" class="menu__img">
+            </div>
+
+            <div class="menu__content" onclick="changeBigImage('assets/img/product1.jpeg', 'Smart Water Meter', 'Limited stock', '$30.00')">
+                <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+            </div>
+			
+			<div class="menu__content" onclick="changeBigImage('assets/img/product1.jpeg', 'Wireless Water Level Controller', 'Coming soon...', '$22.00')">
+                <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+            </div>
+
+            <div class="menu__content" onclick="changeBigImage('assets/img/product1.jpeg', 'Water Pump Controller', 'Available now!', '$25.00')">
+                <img src="assets/img/product2.jpeg" alt="" class="menu__img">
+            </div>
+
+            <!-- Add more cards here -->
+
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // JavaScript function to change the big image and details
+        function changeBigImage(imageSrc, name, detail, price) {
+            document.getElementById("big-image").src = imageSrc;
+            document.getElementById("big-name").innerText = name;
+            document.getElementById("big-detail").innerText = detail;
+            document.getElementById("big-preci").innerText = price;
+        }
+    </script>
+</body>
+</html>

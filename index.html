@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Accent</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <h1 href="#" class="nav__logo">Accent</h1>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+                        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+
+                        <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--========== HOME ==========--
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">Accent</h1>
+                        <h2 class="home__subtitle">Smart Solutions for <br> Smarter Living.</h2>
+                        <a href="#" class="button">View Menu</a>
+                    </div>
+    
+                    <img src="assets/img/main_banner.jpeg" alt="" class="home__img">
+                </div>
+            </section-->
+		<section class="home" id="home">
+				<div class="home__container bd-container bd-grid">
+						<!-- Home Data (Text Content) -->
+					<div class="home__data">
+						<h1 class="home__title">Accent</h1>
+						<h2 class="home__subtitle">Smart Solutions for <br> Smarter Living.</h2>
+						<a href="menu.html" class="button">View Menu</a>
+					</div>
+
+					<!-- Slider Container (keeping home__img as a background image slider) -->
+					<div class="home__slider">
+						<div class="slider">
+							<img src="assets/img/main_banner.jpeg" alt="Slide 1">
+							<img src="assets/img/supported.jpg" alt="Slide 2">
+							<img src="assets/img/banner3.png" alt="Slide 3">
+						</div>
+							<!-- Slider Navigation Controls -->
+						<div class="slider-controls">
+							<span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+							<span class="next" onclick="moveSlide(1)">&#10095;</span>
+						</div>
+					</div>
+				</div>
+		</section>
+
+			 <!-- Add your JavaScript here, right before the closing body tag -->
+    <script>
+        let slideIndex = 0;
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.querySelectorAll('.slider img');
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  // Hide all slides
+            }
+            slides[slideIndex].style.display = "block";  // Show the current slide
+        }
+
+        // Initialize the slider
+        showSlides(slideIndex);
+
+        // Optional: Auto slide every 5 seconds
+        setInterval(function() {
+            moveSlide(1);
+        }, 5000);
+    </script>
+            
+            <!--========== ABOUT ==========-->
+			
+            <section class="about_section bd-container" id="about">
+                <div class="about__container  bd-grid">
+                    <div class="about__data">
+                        <span class="section-subtitle about__initial">About us</span>
+                        <h2 class="section-title about__initial">Smart Water Level Controller.<br> With new AI features.</h2>
+                        <p class="about__description">We specialize in innovative electronic solutions,
+                                    including our flagship smart water controller devices. Designed for both homes and
+                                    businesses, our products use cutting-edge technology to simplify water management,
+                                    offering features like automatic water filling that
+                                    activates when your tank is empty. Our mission is
+                                    to enhance convenience and sustainability, helping you conserve water effortlessly. With a
+                                    commitment to efficiency and environmental responsibility, we’re transforming how water is
+                                    managed—making everyday life smarter, easier, and more eco-friendly. Discover the future of
+                                    water control with us.</p>
+                        <a href="menu.html" class="button">Explore Products</a>
+                    </div>
+
+                    <img src="assets/img/side_banner.jpg" alt="" class="about__img">
+                </div>
+            </section>
+			
+            <!--========== MENU ==========
+			
+            <section class="menu section bd-container" id="menu">
+                <span class="section-subtitle">Products</span>
+                <h2 class="section-title">"Smart, Reliable, and Efficient — Top-Rated Water Control"</h2>
+
+                <div class="menu__container bd-grid">
+                    <div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$22.00</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+
+                    <div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$12.00</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+                    
+                    <div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					<div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					<div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					<div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					<div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					<div class="menu__content">
+                        <img src="assets/img/product1.jpeg" alt="" class="menu__img">
+                        <h3 class="menu__name">Wireless Water Level Controller</h3>
+                        <span class="menu__detail">Coming soon...</span>
+                        <span class="menu__preci">$9.50</span>
+                        <a href="#contact" class="button menu__button"><i class='bx bx-cart-alt'></i></a>
+                    </div>
+					
+					
+
+                </div>
+            </section> -->
+			
+			
+            <!--========== SERVICES ==========-->
+            <section class="services section bd-container" id="services">
+                <span class="section-subtitle">Services</span>
+                <h2 class="section-title">Our amazing services</h2>
+
+                <div class="services__container  bd-grid">
+                    <div class="services__content">
+                        <img class="services__img" src="assets/img/Delivery&1.png"></img>
+                        <h3 class="services__title">Delivery and Installation</h3>
+                        <p class="services__description">Fast and Reliable Delivery: At Accent, we understand the importance of quick and efficient delivery. 
+										Once your order is placed, we ensure fast and reliable shipping, 
+										with your product arriving on time and in perfect condition.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img class="services__img" src="assets/img/services&s.png"></img>
+                        <h3 class="services__title">Customer Support Services</h3>
+                        <p class="services__description">Our support doesn't end with delivery. We are committed to keeping your system working seamlessly 
+														through skilled troubleshooting, regular servicing, and timely upgrades. 
+						                                 Trust on us to keep your system running efficiently and reliably for the long term.</p>
+                    </div>
+
+                    <div class="services__content">
+                        <img class="services__img" src="assets/img/config1.png"></img>
+                        <h3 class="services__title">Expert Configuration</h3>
+                        <p class="services__description">We don't just supply your system; we customize it to your specifications. 
+														Our expertise ensures that your system will be optimized for your specific water management needs, 
+														with settings and scheduling that work effectively with your lifestyle..</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!--===== APP =======
+            <section class="app section bd-container">
+                <div class="app__container bd-grid">
+                    <div class="app__data">
+                        <span class="section-subtitle app__initial">App</span>
+                        <h2 class="section-title app__initial">App is aviable</h2>
+                        <p class="app__description">Find our application and download it, you can make reservations, food orders, see your deliveries on the way and much more.</p>
+                        <div class="app__stores">
+                            <a href="#"><img src="assets/img/app1.png" alt="" class="app__store"></a>
+                            <a href="#"><img src="assets/img/app2.png" alt="" class="app__store"></a>
+                        </div>
+                    </div>
+
+                    <img src="assets/img/movil-app.png" alt="" class="app__img">
+                </div>
+            </section> -->
+
+            <!--========== CONTACT US ==========-->
+            <section class="contact section bd-container" id="contact">
+                <div class="contact__container bd-grid">
+                    <div class="contact__data">
+                        <span class="section-subtitle contact__initial">Let's talk</span>
+                        <h2 class="section-title contact__initial">Contact us</h2>
+                        <p class="contact__description">"Ready to bring smart solutions into your life? Reach out to us anytime, and our 24/7 chat support team will be happy to assist you promptly!".</p>
+                    </div>
+					
+					
+					<!-- Button to trigger pop-up for WhatsApp/Gmail -->
+                    <div class="contact__button">
+                        <a href="#contactModal"<button id="contactButton" class="button">Contact us now</button></a> 
+        			</div>
+                </div>
+            </section>
+			
+			<!-- Modal HTML -->
+			<div id="contactModal" class="modal">
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<h2>Contact Us</h2>
+					<p>Choose how you'd like to reach us:</p>
+        
+        <!-- Container for icons -->
+        <div class="modal-icons">
+            <div class="icon-container">
+                <a href="mailto:yourEmail@example.com" class="modal-button gmail">
+				    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+						<rect width="24" height="24" fill="none" />
+						<path fill="currentColor" d="m18.73 5.41l-1.28 1L12 10.46L6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 
+						0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64" /></svg>Gmail
+                </a>
+            </div>
+            <div class="icon-container">
+                <a href="https://wa.me/yourPhoneNumber?text=Hello,%20I%20would%20like%20to%20contact%20you." target="_blank" class="modal-button">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<rect width="24" height="24" fill="none" />
+	<path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977c0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162l-2.824.741l.753-2.753l-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188a7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73c-.205-.075-.354-.112-.504.112s-.58.729-.711.879s-.262.168-.486.056s-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393c.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666c-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008a.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387c.536.231.954.369 1.279.473c.537.171 1.026.146 1.413.089c.431-.064 1.327-.542 1.514-1.066c.187-.524.187-.973.131-1.067c-.056-.094-.207-.151-.43-.263" fill="currentColor" /></svg>WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- Include Boxicons CDN (for icons) -->
+<link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">		
+        </main>
+
+        <!--========== FOOTER ==========-->
+        <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="#" class="footer__logo">Accent</a>
+                    <span class="footer__description">Smart Solutions</span>
+                    <div>
+                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Delivery</a></li>
+                        <li><a href="#" class="footer__link">Installation</a></li>
+                        <li><a href="#" class="footer__link">Fast food</a></li>
+                        <li><a href="#" class="footer__link">Reserve your spot</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Home</a></li>
+                        <li><a href="#" class="footer__link">company</a></li>
+                        <li><a href="#" class="footer__link">commercial</a></li>
+                        <li><a href="#" class="footer__link">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>bengaluru</li>
+                        <li>Sam #999</li>
+                        <li>999 - 888 - 777</li>
+                        <li>accent@email.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; 2024 Accent. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
