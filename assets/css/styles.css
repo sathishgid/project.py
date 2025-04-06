@@ -88,9 +88,11 @@ body.dark-theme{
 
 /*========== Default background gradient ==========*/
 body {
-  margin: var(--header-height) 0 0 0;
+  margin: 0;
+  padding: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  overflow-x: hidden; /* prevents horizontal scrolling due to overflow */
   background: linear-gradient(to right, #c6cdc0, #b7e6e2); /* Default gradient */
   color: var(--text-color);
   line-height: 1.6;
@@ -313,7 +315,7 @@ img{
 }
 
 /* Mobile responsiveness: Reduce padding on smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .bd-container, .about_section, .services, .menu, .contact {
         padding-left: 15px;
         padding-right: 15px;
@@ -342,7 +344,7 @@ img{
 .home {
     position: relative;
     height: auto;
-	width: auto;
+    width: auto;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -355,10 +357,11 @@ img{
 .home__container {
     width: 100%;
     padding: auto;
-    max-width: none;
+    margin-left: 40px;
+    max-width: 90%;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -412,12 +415,13 @@ img{
 
 .slider-controls {
     position: absolute;
-    top: 30%;
+    top: 10%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     z-index: 2;
     color: white;
+	border-radius: 60px 10px 80px 10px;
 }
 
 .prev, .next {
@@ -1132,4 +1136,6 @@ img{
     font-size: 0.9rem; /* Adjust text size for mobile */
   }
 }
+
+
 
