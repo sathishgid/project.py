@@ -127,3 +127,26 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+/*==================== SETUP PHONE AND EMAIL ====================*/
+// Dynamic WhatsApp and Gmail links
+const gmailButton = document.querySelector(".modal-button.gmail");
+const whatsappButton = document.querySelector(".modal-button.wa");
+
+// Set your phone number (with country code, no spaces or hyphens)
+const phoneNumber = "1234567890";  // Replace with your phone number
+const email = "samcs.email@example.com";  // Replace with your email address
+
+// WhatsApp URL scheme
+const whatsappURL = `https://wa.me/${phoneNumber}?text=Hello,%20I%20would%20like%20to%20contact%20you.`;  // Corrected URL
+// Gmail URL scheme (mailto links are used for email)
+const gmailURL = `mailto:${email}`;
+
+// Update the href attributes of the buttons
+if (whatsappButton) {
+    whatsappButton.setAttribute("href", whatsappURL);
+}
+
+if (gmailButton) {
+    gmailButton.setAttribute("href", gmailURL);
+}
