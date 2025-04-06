@@ -64,13 +64,7 @@ html{
   scroll-behavior: smooth;
 }
 
-/*========== Default background gradient ==========*/
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #c6cdc0, #b7e6e2); /* Default gradient */
-  color: var(--text-color);
-}
+
 
 /*========== Variables Dark theme ==========*/
 body.dark-theme{
@@ -92,11 +86,12 @@ body.dark-theme{
   cursor: pointer;
 }
 
-body{
+/*========== Default background gradient ==========*/
+body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background-color: var(--body-color);
+  background: linear-gradient(to right, #c6cdc0, #b7e6e2); /* Default gradient */
   color: var(--text-color);
   line-height: 1.6;
 }
@@ -128,15 +123,22 @@ img{
 .section-title, .section-subtitle{
   text-align: center;
 }
-
 .section-title{
-  font-size: var(--h1-font-size);
+  font-size: 1.5em;
+  line-height: 1.5;
+  display: block;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
   color: var(--title-color);
   margin-bottom: var(--mb-3);
 }
 
 .section-subtitle{
-  font-size: 30px;
+  font-size: 40px;
   display: block;
   color: var(--first-color);
   font-weight: var(--font-medium);
@@ -144,11 +146,14 @@ img{
 }
 
 /*========== LAYOUT ==========*/
-.bd-container{
-  max-width: 960px;
-  width: calc(100% - 2rem);
-  margin-left: var(--mb-2);
-  margin-right: var(--mb-2);
+/* General side margin (same for all sections) */
+.bd-container {
+	max-width: 960px;
+	width: calc(100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;  /* Adjust this value if needed */
+    padding-right: 20px; /* Adjust this value if needed */
 }
 
 .bd-grid{
@@ -253,7 +258,6 @@ img{
   padding: .8rem;
   background: rgb(5 199 106);
   border-radius: 3px 15px 3px 15px;
-  #border-radius: .4rem;
   z-index: var(--z-tooltip);
   transition: .4s;
   visibility: hidden;
@@ -273,13 +277,7 @@ img{
   visibility: visible;
   bottom: 1.5rem;
 }
-/* General side margin (same for all sections) */
-.bd-container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;  /* Adjust this value if needed */
-    padding-right: 20px; /* Adjust this value if needed */
-}
+
 
 /* Apply the same container structure to other sections */
 .home, .about_section, .menu, .services, .contact {
@@ -287,6 +285,7 @@ img{
     max-width: 1200px; /* Adjust max-width to match home page */
     margin-left: auto;
     margin-right: auto;
+	margin-top: 60px;
 }
 
 /* Specific section styling to keep them aligned */
@@ -342,7 +341,8 @@ img{
 /* Home section */
 .home {
     position: relative;
-    height: 100vh;
+    height: auto;
+	width: auto;
     background-position: center;
     background-size: cover;
     display: flex;
@@ -354,7 +354,7 @@ img{
 
 .home__container {
     width: 100%;
-    padding: 0;
+    padding: auto;
     max-width: none;
     position: relative;
     display: flex;
@@ -368,7 +368,8 @@ img{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 30px;
+	align-items: center;
+    padding-left: 20px;
     z-index: 2;
     flex-wrap: wrap;
     align-items: center;
@@ -386,15 +387,6 @@ img{
     margin-bottom: var(--mb-4);
 }
 
-.home__btn {
-    padding: 1rem 2rem;
-    background-color: var(--first-color);
-    color: #fff;
-    border-radius: 3px 15px 3px 15px;
-    text-align: center;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
 
 /* Slider */
 .home__slider {
@@ -443,20 +435,24 @@ img{
 /* Mobile View */
 @media screen and (max-width: 768px) {
     /* Stack home text and image on mobile */
+	
     .home {
+		margin-bottom: 70px;
         flex-direction: column;
         height: auto;
         padding: 20px 0;
     }
-
+	
     .home__data {
+		margin-bottom: 70px;
         text-align: center;
-        padding-left: 0;
-        padding-bottom: 30px;
+		padding: 0 15px; 
+		width: 100%;
     }
 
     .home__slider {
         margin-top: 50px;
+		margin-right: 50px;
         width: 100%;
         height: 400px;  /* Adjust slider height for smaller screens */
     }
@@ -474,10 +470,7 @@ img{
         font-size: 1.5rem;
     }
 
-    .home__btn {
-        font-size: 1rem; /* Adjust button size on mobile */
-        padding: 0.8rem 1.5rem;
-    }
+
 }
 
 
@@ -503,7 +496,7 @@ img{
 }
 
 .about__container{
-  max-width: 0%;
+  max-width: 100%;
   position: relative;
   padding: 25px;
   border-radius: 10px 60px 10px 60px;
@@ -520,19 +513,9 @@ img{
   font-weight: bold;
   unicode-bidi: isolate;
 }
-.section-title{
-  font-size: 1.5em;
-  line-height: 1.5;
-  display: block;
-  margin-block-start: 0.83em;
-  margin-block-end: 0.83em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  unicode-bidi: isolate;
+
 }
-}
-.about__description{
+.about__description {
   margin-bottom: var(--mb-3);
 }
 
@@ -584,19 +567,60 @@ img{
 
 /* Style for the big card */
 .menu__big-card {
-  position: relative;
+/* Ensures proper flexbox layout for the big card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--container-color);
+    border-radius: 50px 10px 50px 10px;
+    box-shadow: 0 2px 4px rgba(3, 74, 40, 0.15);
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 1200px;
+    transition: transform 0.3s;
+    justify-content: space-between;
+	margin-bottom: -50px;
+}
+
+/* Make the image and description responsive */
+.menu__big-img {
+  width: 45%; /* 45% of the width for the image */
+  height: auto;
+  max-width: 500px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .menu__big-card {
+    flex-direction: column; /* Stack image and description vertically on smaller screens */
+    align-items: center;
+  }
+
+  .menu__big-img {
+    width: 80%; /* Adjust image size for smaller screens */
+  }
+}
+
+
+/* Product Description & Features */
+.product-description {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: -40px;
+}
+/* Product description section layout */
+.product-description {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center content inside the big card */
-  background-color: var(--container-color);
-  border-radius: 50px 10px 50px 10px;
-  box-shadow: 0 2px 4px rgba(3, 74, 40, .15);
-  padding: 0px;
-  margin: 20px 0;
-  width: 100%; /* Adjust the width */
-  max-width: 600px; /* Limit the width */
-  transition: transform 0.3s;
-  text-align: center; /* Center the text inside the big card */
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: -0px;
 }
 
 /* Big image inside the big card */
@@ -606,6 +630,17 @@ img{
   max-width: 500px;
   margin: 0 auto;
   transition: transform 0.3s ease;
+}
+
+.product-buttons button {
+    width: auto;
+	height: auto;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+	gap: 10px;
+    cursor: pointer;
 }
 
 /* Style for product name, detail, and price */
@@ -700,6 +735,42 @@ img{
 }
 
 
+/*========== PRODUCT DETAILS ==========*/
+
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.product-main-image {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-gallery {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .product-info {
+        width: 80%;
+    }
+
+    .product-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 
 /*========== APP ==========
 .app__data{
@@ -793,7 +864,7 @@ img{
     align-items: center;
 }
 .icon-container a {
-  display: inline-block;
+  display: ruby-text;
   font-size: 1.5rem; /* Make sure the icons are big enough */
 }
 
@@ -933,6 +1004,7 @@ img{
   .app__container{
     grid-template-columns: repeat(2,1fr);
     align-items: center;
+	text-align: center;
   }
 
   .about__data, .about__initial,
@@ -962,7 +1034,7 @@ img{
   }
 
   .section{
-    padding-top: 6rem;
+    padding-top: 2rem;
   }
 
   .nav{
@@ -1032,6 +1104,7 @@ img{
         height: 640px;
     }
 }
+
 
 /* Mobile-first approach: Ensure proper styling on smaller screens */
 @media screen and (max-width: 768px) {
